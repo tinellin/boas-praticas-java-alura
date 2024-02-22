@@ -1,7 +1,10 @@
 package br.com.alura.adopet.api.exception;
 
-public class AbrigoException extends RuntimeException {
-    public AbrigoException(String message) {
-        super(message);
+import org.springframework.http.HttpStatusCode;
+import org.springframework.web.server.ResponseStatusException;
+
+public class AbrigoException extends ResponseStatusException {
+    public AbrigoException(HttpStatusCode status, String reason) {
+        super(status, reason);
     }
 }
